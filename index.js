@@ -13,6 +13,11 @@
         label.y = core.height / 2;
         label.width = core.width / 2;
         label.height = core.height / 2;
+
+        label.addEventListener('enterframe', () => {
+          ++label.rotation;
+        });
+
         this.addChild(label);
         return label;
       }).call(this, new enchant.Label());
