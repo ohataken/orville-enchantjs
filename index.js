@@ -10,31 +10,31 @@
       this.originX = radius;
       this.originY = radius;
 
-      this.button = (function (sprite) {
-        sprite.image = (function (surface) {
+      this.button = ((sprite) => {
+        sprite.image = ((surface) => {
           surface.context.fillStyle = 'rgba(0, 0, 0, 0.25)';
           surface.context.beginPath();
           surface.context.arc(radius, radius, radius, 0, Math.PI * 2, true);
           surface.context.fill();
           return surface;
-        }).call(this, new enchant.Surface(sprite.width, sprite.height));
+        })(new enchant.Surface(sprite.width, sprite.height));
 
         this.addChild(sprite);
 
         return sprite;
-      }).call(this, new enchant.Sprite(this.width, this.width));
+      })(new enchant.Sprite(this.width, this.width));
     },
 
     fillSurface(fillStyle) {
       const radius = this.button.width / 2;
 
-      (function (surface) {
+      ((surface) => {
         surface.clear();
         surface.context.fillStyle = fillStyle;
         surface.context.beginPath();
         surface.context.arc(radius, radius, radius, 0, Math.PI * 2, true);
         surface.context.fill();
-      }).call(this, this.button.image);
+      })(this.button.image);
     },
 
     ontouchstart() {
@@ -52,7 +52,7 @@
     initialize: function () {
       enchant.Scene.apply(this, arguments);
 
-      const title = (function (label) {
+      const title = ((label) => {
         const core = enchant.Core.instance;
         label.text = 'Orville\npress any key';
         label.font = '8em serif';
@@ -69,7 +69,7 @@
 
         this.addChild(label);
         return label;
-      }).call(this, new enchant.Label());
+      })(new enchant.Label());
 
       this.addEventListener('touchstart', () => {
         const core = enchant.Core.instance;
@@ -85,37 +85,37 @@
     initialize: function () {
       enchant.Scene.apply(this, arguments);
 
-      const controlLA = (function (entity) {
+      const controlLA = ((entity) => {
         const core = enchant.Core.instance;
         entity.x = core.width / 2 - entity.width * 3;
         entity.y = core.height - entity.height * 2;
         this.addChild(entity);
         return entity;
-      }).call(this, new NoteControl(50));
+      })(new NoteControl(50));
 
-      const controlLB = (function (entity) {
+      const controlLB = ((entity) => {
         const core = enchant.Core.instance;
         entity.x = core.width / 2 - entity.width * 1;
         entity.y = core.height - entity.height * 2;
         this.addChild(entity);
         return entity;
-      }).call(this, new NoteControl(50));
+      })(new NoteControl(50));
 
-      const controlRA = (function (entity) {
+      const controlRA = ((entity) => {
         const core = enchant.Core.instance;
         entity.x = core.width / 2 + entity.width * 1;
         entity.y = core.height - entity.height * 2;
         this.addChild(entity);
         return entity;
-      }).call(this, new NoteControl(50));
+      })(new NoteControl(50));
 
-      const controlRB = (function (entity) {
+      const controlRB = ((entity) => {
         const core = enchant.Core.instance;
         entity.x = core.width / 2 + entity.width * 3;
         entity.y = core.height - entity.height * 2;
         this.addChild(entity);
         return entity;
-      }).call(this, new NoteControl(50));
+      })(new NoteControl(50));
     },
 
   });
