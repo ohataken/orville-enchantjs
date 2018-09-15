@@ -27,7 +27,7 @@
   });
 
   window.addEventListener('load', () => {
-    const core = new enchant.Core(1920, 1080);
+    const core = new enchant.Core(1080, 1080);
 
     core.onload = function () {
       core.pushScene(new SplashScene());
