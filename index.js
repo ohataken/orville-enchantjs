@@ -21,7 +21,6 @@
         this.addChild(label);
         return label;
       }).call(this, new enchant.Label());
-      // 
     },
 
   });
