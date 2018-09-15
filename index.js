@@ -1,5 +1,52 @@
 (function () {
 
+  const NoteControl = enchant.Class.create(enchant.Group, {
+
+    initialize: function (radius) {
+      enchant.Group.apply(this, arguments);
+
+      this.width = radius * 2;
+      this.height = radius * 2;
+      this.originX = radius;
+      this.originY = radius;
+
+      this.button = (function (sprite) {
+        sprite.image = (function (surface) {
+          surface.context.fillStyle = 'rgba(0, 0, 0, 0.25)';
+          surface.context.beginPath();
+          surface.context.arc(radius, radius, radius, 0, Math.PI * 2, true);
+          surface.context.fill();
+          return surface;
+        }).call(this, new enchant.Surface(sprite.width, sprite.height));
+
+        this.addChild(sprite);
+
+        return sprite;
+      }).call(this, new enchant.Sprite(this.width, this.width));
+    },
+
+    fillSurface(fillStyle) {
+      const radius = this.button.width / 2;
+
+      (function (surface) {
+        surface.clear();
+        surface.context.fillStyle = fillStyle;
+        surface.context.beginPath();
+        surface.context.arc(radius, radius, radius, 0, Math.PI * 2, true);
+        surface.context.fill();
+      }).call(this, this.button.image);
+    },
+
+    ontouchstart() {
+      this.fillSurface('rgba(0, 0, 0, 0.75');
+    },
+
+    ontouchend() {
+      this.fillSurface('rgba(0, 0, 0, 0.25');
+    },
+
+  });
+
   const SplashScene = enchant.Class.create(enchant.Scene, {
 
     initialize: function () {
