@@ -87,32 +87,32 @@
 
       const controlLA = ((entity) => {
         const core = enchant.Core.instance;
-        entity.x = core.width / 2 - entity.width * 3;
-        entity.y = core.height - entity.height * 2;
+        entity.x = core.width / 2 - entity.width / 2 - entity.width * 4;
+        entity.y = core.height - entity.height / 2 - entity.height * 1;
         this.addChild(entity);
         return entity;
       })(new NoteControl(50));
 
       const controlLB = ((entity) => {
         const core = enchant.Core.instance;
-        entity.x = core.width / 2 - entity.width * 1;
-        entity.y = core.height - entity.height * 2;
+        entity.x = core.width / 2 - entity.width / 2 - entity.width * 2;
+        entity.y = core.height - entity.height / 2 - entity.height * 1;
         this.addChild(entity);
         return entity;
       })(new NoteControl(50));
 
       const controlRA = ((entity) => {
         const core = enchant.Core.instance;
-        entity.x = core.width / 2 + entity.width * 1;
-        entity.y = core.height - entity.height * 2;
+        entity.x = core.width / 2 - entity.width / 2 + entity.width * 2;
+        entity.y = core.height - entity.height / 2 - entity.height * 1;
         this.addChild(entity);
         return entity;
       })(new NoteControl(50));
 
       const controlRB = ((entity) => {
         const core = enchant.Core.instance;
-        entity.x = core.width / 2 + entity.width * 3;
-        entity.y = core.height - entity.height * 2;
+        entity.x = core.width / 2 - entity.width / 2 + entity.width * 4;
+        entity.y = core.height - entity.height / 2 - entity.height * 1;
         this.addChild(entity);
         return entity;
       })(new NoteControl(50));
