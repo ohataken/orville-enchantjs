@@ -85,20 +85,6 @@
     initialize: function () {
       enchant.Scene.apply(this, arguments);
 
-      const title = (function (label) {
-        const core = enchant.Core.instance;
-        label.text = 'PlayScene';
-        label.font = '8em serif';
-        label.x = core.width / 2 - label.width / 2;
-        label.y = core.height / 2 - label.height / 2;
-        label.originX = label.width / 2;
-        label.originY = label.height / 2;
-        label.width = core.width / 2;
-        label.height = core.height / 2;
-        this.addChild(label);
-        return label;
-      }).call(this, new enchant.Label());
-
     },
 
   });
