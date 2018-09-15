@@ -9,8 +9,10 @@
         const core = enchant.Core.instance;
         label.text = 'Orville';
         label.font = '8em serif';
-        label.x = core.width / 2;
-        label.y = core.height / 2;
+        label.x = core.width / 2 - label.width / 2;
+        label.y = core.height / 2 - label.height / 2;
+        label.originX = label.width / 2;
+        label.originY = label.height / 2;
         label.width = core.width / 2;
         label.height = core.height / 2;
 
