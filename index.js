@@ -85,6 +85,37 @@
     initialize: function () {
       enchant.Scene.apply(this, arguments);
 
+      const controlLA = (function (entity) {
+        const core = enchant.Core.instance;
+        entity.x = core.width / 2 - entity.width * 3;
+        entity.y = core.height - entity.height * 2;
+        this.addChild(entity);
+        return entity;
+      }).call(this, new NoteControl(50));
+
+      const controlLB = (function (entity) {
+        const core = enchant.Core.instance;
+        entity.x = core.width / 2 - entity.width * 1;
+        entity.y = core.height - entity.height * 2;
+        this.addChild(entity);
+        return entity;
+      }).call(this, new NoteControl(50));
+
+      const controlRA = (function (entity) {
+        const core = enchant.Core.instance;
+        entity.x = core.width / 2 + entity.width * 1;
+        entity.y = core.height - entity.height * 2;
+        this.addChild(entity);
+        return entity;
+      }).call(this, new NoteControl(50));
+
+      const controlRB = (function (entity) {
+        const core = enchant.Core.instance;
+        entity.x = core.width / 2 + entity.width * 3;
+        entity.y = core.height - entity.height * 2;
+        this.addChild(entity);
+        return entity;
+      }).call(this, new NoteControl(50));
     },
 
   });
