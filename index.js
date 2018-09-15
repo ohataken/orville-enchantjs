@@ -23,6 +23,14 @@
         this.addChild(label);
         return label;
       }).call(this, new enchant.Label());
+
+      this.addEventListener('touchstart', () => {
+        const core = enchant.Core.instance;
+        core.popScene();
+        core.pushScene(new PlayScene());
+      });
+    },
+
   });
 
   const PlayScene = enchant.Class.create(enchant.Scene, {
