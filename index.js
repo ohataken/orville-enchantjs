@@ -7,7 +7,7 @@
 
       const title = (function (label) {
         const core = enchant.Core.instance;
-        label.text = 'Orville';
+        label.text = 'Orville\npress any key';
         label.font = '8em serif';
         label.x = core.width / 2 - label.width / 2;
         label.y = core.height / 2 - label.height / 2;
